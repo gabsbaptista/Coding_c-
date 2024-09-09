@@ -1,16 +1,14 @@
-//My calculator project
-
 #include <iostream>
 
 using namespace std;
 
 static void print_menu(){
     cout << "CALCULATOR\n" << endl;
-    cout << "       1 - Addition" << endl;
-    cout << "       2 - Subtraction" << endl;
-    cout << "       3 - Multiplication" << endl;
-    cout << "       4 - Division\n" << endl;
-    cout << "       [Enter]: ";
+    cout << "1 - Addition" << endl;
+    cout << "2 - Subtraction" << endl;
+    cout << "3 - Multiplication" << endl;
+    cout << "4 - Division\n" << endl;
+    cout << "[Enter]: ";
 }
 
 static bool continue_(){
@@ -38,56 +36,60 @@ static bool continue_(){
 static bool add(){
     int x, y;
     cout << "ADDITION\n" << endl;
-    cout << "       (number 1): ";
+    cout << "(number 1): ";
     cin >> x;
-    cout << "       (number 2): ";
+    cout << "(number 2): ";
     cin >> y;
-    cout << "       RESULT = " << x+y;
+    cout << "RESULT = " << x+y;
     bool leave = continue_();
+
     return leave;
 }
 
 static bool sub(){
     int x, y;
     cout << "SUBTRACTION\n" << endl;
-    cout << "       (number 1): ";
+    cout << "(number 1): ";
     cin >> x;
-    cout << "       (number 2): ";
+    cout << "(number 2): ";
     cin >> y;
-    cout << "       RESULT = " << x-y;
+    cout << "RESULT = " << x-y;
     
     bool leave = continue_();
+
     return leave;
 }
 
 static bool multi(){
     int x, y;
     cout << "MULTIPLICATION\n" << endl;
-    cout << "       (number 1): ";
+    cout << "(number 1): ";
     cin >> x;
-    cout << "       (number 2): ";
+    cout << "(number 2): ";
     cin >> y;
-    cout << "       RESULT = " << x*y;
+    cout << "RESULT = " << x*y;
     
     bool leave = continue_();
+
     return leave;
 }
 
 static bool divs(){
     int x, y;
     cout << "DIVISION\n" << endl;
-    cout << "       (number 1): ";
+    cout << "(number 1): ";
     cin >> x;
-    cout << "       (number 2): ";
+    cout << "(number 2): ";
     cin >> y;
     
     if(y == 0){
-        cout << "       RESULT = Infinity";
+        cout << "RESULT = Infinity";
     } else{
-        cout << "       RESULT = " << x/y;
+        cout << "RESULT = " << x/y;
     }
     
     bool leave = continue_();
+
     return leave;
 }
 
@@ -104,36 +106,38 @@ static bool optionsAritmethics(){
         switch(option){
             case 1:
                 system("clear");
-                leave = add();
+                leave = add(); // function in line 38
             break;
             
             case 2:
                 system("clear");
-                leave = sub();
+                leave = sub(); // function in line 51
             break;
             
             case 3:
                 system("clear");
-                leave = multi();
+                leave = multi(); // function in line 65
             break;
             
             case 4:
                 system("clear");
-                leave = divs();
+                leave = divs(); // function in line 79
             break;
             
             default:
-                cout << "       Incorrect input, insert again: ";
+                cout << "Incorrect input, insert again: ";
                 error = true;
             break;
         }
     } while(error);
+
     return leave;
 }
 
 int main(){
     
     bool leave;
+
     do{
         print_menu();
         leave = optionsAritmethics();
